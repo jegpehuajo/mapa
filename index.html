@@ -5,10 +5,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapa</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Mapa</h1>
+  <h1>Pehuajo</h1>
+  <section>
+    <h3>Lugares</h3>
+    <select name="select-location" id="select-location">
+      <option value="-35.8107544,-61.8989667">Plaza Dardo Rocha</option>
+      <option value="-35.8038921,-61.8904095">Plaza Juan XXIII</option>
+      <option value="-35.8063852,-61.8987602">Plaza Italia</option>
+      <option value="-35.8208706,-61.8903645">Plazoleta Pepe Issa</option>
+      <option value="-35.8339769,-61.8729166">Plaza Centenario</option>
+      <option value="-35.8190586,-61.9009421">Parque General San Martin</option>
+      <option value="-35.8014188,-61.8988441">Hospital Municipal de Pehuajo</option>
+      <option value="-35.8304987,-61.8839387">Cementerio de Pehuajó</option>
+    </select>
+  </section>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+  
   <script src="mapa.js"></script>
 </body>
 </html>
