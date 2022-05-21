@@ -9,4 +9,8 @@ document.getElementById('select-location').addEventListener('change', function(e
   map.flyTo(coords,18);
 });
 
+document.getElementById('btnResetMap').addEventListener('click', function(){
+  map.setView([-35.81, -61.89], 14);
+});
+
 
