@@ -1,8 +1,10 @@
 body {font-family: Arial, Helvetica, sans-serif;margin:1em;}
-#map { height: 80vh; margin-top: 1em;}
+#map { height: 75vh; margin-top: 1em;}
 footer {
   font-weight: lighter;
   text-align: center; 
-  text-transform: uppercase;
   margin: 1em;
+}
+footer span {
+  text-transform: uppercase;
 }
