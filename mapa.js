@@ -13,4 +13,4 @@ document.getElementById('btnResetMap').addEventListener('click', function(){
   map.setView([-35.81, -61.89], 14);
 });
 
-
+map.scrollWheelZoom.disable();
