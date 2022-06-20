@@ -7,6 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 document.getElementById('select-location').addEventListener('change', function(e){
   let coords = e.target.value.split(",");
   map.flyTo(coords,18);
+  let marker = L.marker(coords).addTo(map);
 });
 
 document.getElementById('btnResetMap').addEventListener('click', function(){
