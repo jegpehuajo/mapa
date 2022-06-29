@@ -8,3 +8,9 @@ footer {
 footer p {
   text-transform: uppercase;
 }
+@media screen and (max-width:768px) {
+  #select-location {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+}
