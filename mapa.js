@@ -9,7 +9,8 @@ document.getElementById('select-location').addEventListener('change', function(e
   map.flyTo(coords,18);
   let marker = L.marker(coords).addTo(map);
   let arrayText = document.getElementById('select-location').options[document.getElementById('select-location').selectedIndex].text;
-  marker.bindTooltip(arrayText).openTooltip();
+  //marker.bindTooltip(arrayText).openTooltip();
+  marker.bindPopup(arrayText).openPopup;
 });
 
 document.getElementById('btnResetMap').addEventListener('click', function(){
