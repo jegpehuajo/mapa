@@ -1,86 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Mapa de Pehuajo</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-   crossorigin=""/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-   <link rel="stylesheet" href="style.css">
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-88MLPB8F5B');
-  </script>
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand"><h1>Pehuajo</h1></a>
-        <p class="lead">Fundación: <small>3 de julio de 1883 - Fundada por </small>Dr. Dardo Rocha</p>
-      </div>
-    </nav>
-  </header>
-  <section class="container-fluid">
-    <h3>Lugares</h3>
-    <select name="select-location" id="select-location" class="btn btn-outline-primary">
-      <option value="-35.8135361,-61.8975912">Auditorio del Arte</option>
-      <option value="-35.8196382,-61.8879058">Club Defensores del Este</option>
-      <option value="-35.8193021,-61.8728542">Club Estudiantes</option>
-      <option value="-35.8321018,-61.8818182">Club Deportivo (Cancha nueva)</option>
-      <option value="-35.8283374,-61.8786161">Cancha de Hockey Municipal</option>
-      <option value="-35.8205657,-61.9167479">Club San Martin</option>
-      <option value="-35.7976379,-61.8874508">Centro ciclista</option>
-      <option value="-35.8260972,-61.9092987">Centro Intregrador Comunitario</option>
-      <option value="-35.8117937,-61.8973286">Cine Zurro</option>
-      <option value="-35.8179208,-61.8916493">Escuela Nº 15 - AlmaFuerte</option>
-      <option value="-35.810317,-61.8994591">Escuela Primaria Nº 2 - Domingo Faustino Sarmiento</option>
-      <option value="-35.8206182,-61.9045909">Escuela Primaria Nº 1 - Dr Dardo Rocha</option>
-      <option value="-35.8213314,-61.9040781">Escuela secundaria N° 8 - René Favaloro</option>
-      <option value="-35.8143366,-61.904408">Escuela Primaria Nº 20 - Remedios de Escalada</option>
-      <option value="-35.8104021,-61.893698">Escuela Normal</option>
-      <option value="-35.8188323,-61.915039">Escuela Técnica Nº 1</option>
-      <option value="-35.8102568,-61.9079523">Escuela Primaria Nº 9 - José Manuel Estrada</option>
-      <option value="-35.803153,-61.8981128">Escuela Primaria Nº 48 - Francisco Gortari</option>
-      <option value="-35.815089,-61.9127443">Colegio Santa Maria de Pehuajo</option>
-      <option value="-35.803062,-61.8919586">Escuela Primaria Nº 13 - Gral. José de San Martín</option>
-      <option value="-35.8150647,-61.8948011">Jardin Nº 908</option>
-      <option value="-35.8107544,-61.8989667">Plaza Dardo Rocha</option>
-      <option value="-35.8038921,-61.8904095">Plaza Juan XXIII</option>
-      <option value="-35.8063852,-61.8987602">Plaza Italia</option>
-      <option value="-35.8208706,-61.8903645">Plazoleta Pepe Issa</option>
-      <option value="-35.8339769,-61.8729166">Plaza Centenario</option>
-      <option value="-35.8190586,-61.9009421">Parque General San Martin</option>
-      <option value="-35.8148751,-61.8871731">Museo del cine Pehuajo</option>
-      <option value="-35.8007939,-61.8971265">Secretaría de cultura</option>
-      <option value="-35.8370442,-61.8705278">Tortuga Manuelita</option>
-      <option value="-35.8282245,-61.9057667">Hipódromo de Pehuajó</option>
-      <option value="-35.777751,-61.9110493">Club de Pesca Las Mellizas</option>
-      <option value="-35.8014188,-61.8988441">Hospital Municipal de Pehuajo</option>
-      <option value="-35.8304987,-61.8839387">Cementerio de Pehuajó</option>
-    </select>
-    <button id="btnResetMap" class="btn btn-outline-primary">Vista Inicial</button>
-  </section>
-  <div id="map"></div>
-  <footer>
-    <span>Hecho para Pehuajo desde mi 💻 en algún lugar de 🇦🇷</span>
-    <p><a href="https://www.instagram.com/pehuajo/" target="_blank" class="nav-link">Contacto</a></p>
-  </footer>
-  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-   crossorigin=""></script>
-  
-  <script src="mapa.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-88MLPB8F5B"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Mapa de Pehuajo</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-88MLPB8F5B");
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand"><h1>Pehuajo</h1></a>
+          <p class="lead">
+            Fundación: <small>3 de julio de 1883 - Fundada por </small>Dr. Dardo
+            Rocha
+          </p>
+        </div>
+      </nav>
+    </header>
+    <section class="container-fluid">
+      <h3>Lugares</h3>
+      <select
+        name="select-location"
+        id="select-location"
+        class="btn btn-outline-primary"
+      >
+        <option value="-35.8135361,-61.8975912">Auditorio del Arte</option>
+        <option value="-35.8196382,-61.8879058">
+          Club Defensores del Este
+        </option>
+        <option value="-35.8193021,-61.8728542">Club Estudiantes</option>
+        <option value="-35.8321018,-61.8818182">
+          Club Deportivo (Cancha nueva)
+        </option>
+        <option value="-35.8283374,-61.8786161">
+          Cancha de Hockey Municipal
+        </option>
+        <option value="-35.8205657,-61.9167479">Club San Martin</option>
+        <option value="-35.7976379,-61.8874508">Centro ciclista</option>
+        <option value="-35.8260972,-61.9092987">
+          Centro Intregrador Comunitario
+        </option>
+        <option value="-35.8117937,-61.8973286">Cine Zurro</option>
+        <option value="-35.8179208,-61.8916493">
+          Escuela Nº 15 - AlmaFuerte
+        </option>
+        <option value="-35.810317,-61.8994591">
+          Escuela Primaria Nº 2 - Domingo Faustino Sarmiento
+        </option>
+        <option value="-35.8206182,-61.9045909">
+          Escuela Primaria Nº 1 - Dr Dardo Rocha
+        </option>
+        <option value="-35.8213314,-61.9040781">
+          Escuela secundaria N° 8 - René Favaloro
+        </option>
+        <option value="-35.8143366,-61.904408">
+          Escuela Primaria Nº 20 - Remedios de Escalada
+        </option>
+        <option value="-35.8104021,-61.893698">Escuela Normal</option>
+        <option value="-35.8188323,-61.915039">Escuela Técnica Nº 1</option>
+        <option value="-35.8102568,-61.9079523">
+          Escuela Primaria Nº 9 - José Manuel Estrada
+        </option>
+        <option value="-35.803153,-61.8981128">
+          Escuela Primaria Nº 48 - Francisco Gortari
+        </option>
+        <option value="-35.815089,-61.9127443">
+          Colegio Santa Maria de Pehuajo
+        </option>
+        <option value="-35.803062,-61.8919586">
+          Escuela Primaria Nº 13 - Gral. José de San Martín
+        </option>
+        <option value="-35.8150647,-61.8948011">Jardin Nº 908</option>
+        <option value="-35.8107544,-61.8989667">Plaza Dardo Rocha</option>
+        <option value="-35.8038921,-61.8904095">Plaza Juan XXIII</option>
+        <option value="-35.8063852,-61.8987602">Plaza Italia</option>
+        <option value="-35.8208706,-61.8903645">Plazoleta Pepe Issa</option>
+        <option value="-35.8339769,-61.8729166">Plaza Centenario</option>
+        <option value="-35.8190586,-61.9009421">
+          Parque General San Martin
+        </option>
+        <option value="-35.8148751,-61.8871731">Museo del cine Pehuajo</option>
+        <option value="-35.8007939,-61.8971265">Secretaría de cultura</option>
+        <option value="-35.8370442,-61.8705278">Tortuga Manuelita</option>
+        <option value="-35.8282245,-61.9057667">Hipódromo de Pehuajó</option>
+        <option value="-35.777751,-61.9110493">
+          Club de Pesca Las Mellizas
+        </option>
+        <option value="-35.8014188,-61.8988441">
+          Hospital Municipal de Pehuajo
+        </option>
+        <option value="-35.8304987,-61.8839387">Cementerio de Pehuajó</option>
+      </select>
+      <button id="btnResetMap" class="btn btn-outline-primary">
+        Vista Inicial
+      </button>
+    </section>
+    <div id="map"></div>
+    <footer>
+      <span>Hecho para Pehuajo desde mi 💻 en algún lugar de 🇦🇷</span>
+      <p>
+        <a
+          href="https://www.instagram.com/pehuajo/"
+          target="_blank"
+          class="nav-link"
+          >Contacto</a
+        >
+      </p>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0877732674632425"
+        crossorigin="anonymous"
+      ></script>
+      <!-- darelprimerpaso_footer-1_AdSense6_1x1_as -->
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-0877732674632425"
+        data-ad-slot="7062723814"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </footer>
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+
+    <script src="mapa.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-88MLPB8F5B"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
